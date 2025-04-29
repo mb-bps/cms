@@ -1,0 +1,111 @@
+<mat-card>
+    <mat-card-header>
+        <h1 class="title">Order's</h1>
+
+    </mat-card-header>
+    <mat-card-content>
+        <table mat-table [dataSource]="datasource" matSort>
+            <ng-container matColumnDef="orderNo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Order No</th>
+                <td mat-cell *matCellDef="let element">{{element.orderNo}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="orderStatus">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Order Status</th>
+                <td mat-cell *matCellDef="let element">{{element.order_status}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="orderType">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Order Type</th>
+                <td mat-cell *matCellDef="let element">{{element.orderType == "DO" ? "E-Copy" : "Printout"}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="orderTotal">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Order Total</th>
+                <td mat-cell *matCellDef="let element">{{element.orderTotal ? element.orderTotal + " QAR" : ""}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="createdBy">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Created By</th>
+                <td mat-cell *matCellDef="let element">{{element.createdBy}}</td>
+            </ng-container>
+            <ng-container matColumnDef="createdOn">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Created On</th>
+                <td mat-cell *matCellDef="let element">{{element.createdOn}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let element">
+                    @if(element.role !== 'admin'){
+                    <button (click)="updatestatus(element)" mat-raised-button color="primary">Update Status</button>
+                    }
+                    <button (click)="openOrderDetail(element)" mat-raised-button color="primary">Veiw Details</button>
+                </td>
+            </ng-container>
+            <tr class="table-header" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+        </table>
+    </mat-card-content>
+    <br>
+    <mat-card-footer>
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+    </mat-card-footer>
+</mat-card>
+
+<ng-template #orderDetailModal>
+    <div class="model">
+        <div *ngFor="let item of orderDetailLst" class="pb-3 pt-3 border-bottom">
+            <div class="d-flex align-items-start">
+                <img [src]="prdImg + item.image" alt="logo" class="h-28 w-100 rounded-md" />
+                <div class="mx-2">
+                    <p class="label w-240px">Product Name : <span class="">{{item.productName_en}} </span></p>
+                    <p class="label w-240px">Author Name : <span class="">{{item.author_en}} </span></p>
+                    <p class="label w-240px">Publisher : <span class="">{{item.productName_en}} </span></p>
+                    <p class="label w-180px">No of Pages : <span class="">{{item.bookpagesEN}} </span></p>
+                    <p class="label w-180px">ISBN : <span class="">{{item.isbnnoEN}} </span></p>
+                    <p class="label w-180px">Category Id : <span class="">{{item.catidEN}} </span></p>
+                    <p class="label w-180px">Product Id : <span class="">{{item.prodId}} </span></p>
+                </div>
+                <div class="mx-2">
+                    <p class="label w-180px" *ngIf="item.isPrinting">
+                        <span>E-Copy</span>
+                        <span>{{item.author_en}}</span>
+                    </p>
+                    <p class="label w-180px">Page Size : <span class="">{{item.pageSize || 'A4'}} </span></p>
+                    <p class="label w-180px">Color : <span class="">{{item.color || 'Black & White'}} </span></p>
+                    <p class="label w-180px">Binding : <span class="">{{item.binding || 'Soft'}} </span></p>
+                </div>
+                <div class="mx-2">
+                    <p class="label w-180px">Price : <span class="">{{item.price + ' QAR'}} </span></p>
+                    <p class="label w-180px">Quantity : <span class="">{{item.quantity}} </span></p>
+                    <p class="label w-180px">Product Total : <span class="">{{item.price * item.quantity + ' QAR'}}
+                        </span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 text-end">
+            <div class="label">Total</div>
+            <div class="label">{{getTotal() + ' QAR'}}</div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #statusDialog>
+    <h2 mat-dialog-title>Change Status</h2>
+    <mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="status">
+              @for (item of statusLst; track status) {
+                <mat-option [value]="item.value">{{item.name}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-raised-button class="w-45" color="primary" (click)="onUpdateStatus()">Update</button>
+        <button mat-raised-button class="w-45" color="accent" mat-dialog-close cdkFocusInitial>Cancel</button>
+    </mat-dialog-actions>
+</ng-template>

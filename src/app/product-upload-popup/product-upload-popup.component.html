@@ -1,0 +1,187 @@
+<div fxLayout="row1" fxLayoutAlign="center center" class="h-100" style="width: 999px;">
+    <form [formGroup]="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate fxFlex="90" fxFlex.gt-sm="90" fxFlex.sm="60" class="mat-elevation-z6">
+         <div class="p-4">
+             <div class="p-3">
+             <div style="overflow: hidden; overflow-y: scroll; height: 650px;">
+           <div class="row1">
+               <mat-form-field appearance="outline">
+                   <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                   <input matInput type="text" placeholder="Book Name" formControlName="_booknameEN" >
+               </mat-form-field>
+               <div class="flex items-center relative ">
+                <img (click)="inputField.click()" src={{this.url}} alt="Image" style="height: 37px; width: 40px; margin-top: 20px; border-radius: 10px; " required>
+                </div>
+                <input #inputField type="file" (change)="onSelectFile($event)" hidden required>
+               <mat-form-field appearance="outline" dir='rtl'>
+                   <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                   <input matInput placeholder="اسم الكتاب" formControlName="_booknameAR">
+               </mat-form-field>
+           </div>
+
+           <div class="row1">
+            <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput type="text" placeholder="Book Title Page" formControlName="_booktitleEN" >
+            </mat-form-field>
+            <div class="flex items-center relative ">
+             <img (click)="inputField1.click()" src={{this.url1}} alt="Image" style="height: 37px; width: 40px; margin-top: 20px; border-radius: 10px; " required>
+            </div>
+            <input #inputField1 type="file" (change)="onSelectFile1($event)" hidden required>
+            <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput placeholder="صفحة عنوان الكتاب" formControlName="_booktitleAR">
+            </mat-form-field>
+        </div>
+
+        <div class="row1">
+            <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput type="text" placeholder="Book Preview" formControlName="_bookpreviewEN" >
+            </mat-form-field>
+            <div class="flex items-center relative ">
+             <img (click)="inputField2.click()" src={{this.url2}} alt="Image" style="height: 37px; width: 40px; margin-top: 20px; border-radius: 10px; " required>
+            </div>
+            <input #inputField2 type="file" (change)="onSelectFile2($event)" hidden required>
+            <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput placeholder="معاينة الكتاب" formControlName="_bookpreviewAR">
+            </mat-form-field>
+        </div>
+
+        <div class="row1">
+            <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput type="text" placeholder="Author Name" formControlName="_authornameEN" >
+            </mat-form-field>
+            <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput placeholder="اسم المؤلف" formControlName="_authornameAR">
+            </mat-form-field>
+        </div>
+
+        <div class="row1">
+            <mat-form-field appearance="outline">
+                <!-- <mat-label><b>Select Web Site</b></mat-label> -->
+                <mat-select placeholder="Select Category" matInput formControlName="_catidEN" required (selectionChange)="onCatChangeEN($event)">
+                  <mat-option *ngFor="let cats of catSource;" [value]='cats.id'>{{cats.captionEN}}</mat-option>
+                </mat-select>
+                <!-- <mat-error *ngIf="form.controls.website_id.errors?.required">Website is required</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" dir="rtl">
+                <!-- <mat-label><b>Select Web Site</b></mat-label> -->
+                <mat-select style="text-align: right;" placeholder="اختر الفئة" matInput formControlName="_catidAR" required (selectionChange)="onCatChangeAR($event)">
+                  <mat-option *ngFor="let cats of catSource;" [value]='cats.id'>{{cats.captionAR}}</mat-option>
+                </mat-select>
+                <!-- <mat-error *ngIf="form.controls.website_id.errors?.required">Website is required</mat-error> -->
+            </mat-form-field>
+        </div>
+
+        <div class="row1">
+            <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput type="text" placeholder="Book Language" formControlName="_booklanguageEN" >
+            </mat-form-field>
+            <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput placeholder="لغة الكتاب" formControlName="_booklanguageAR">
+            </mat-form-field>
+        </div>
+        
+        <div class="row1">
+            <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput type="text" placeholder="Number of Pages" formControlName="_bookpagesEN" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput placeholder="عدد الصفحات" formControlName="_bookpagesAR" required>
+            </mat-form-field>
+        </div>
+
+        <div class="row1">
+            <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput type="text" placeholder="Price of Book" formControlName="_priceEN" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput placeholder="سعر الكتاب" formControlName="_priceAR" required>
+            </mat-form-field>
+        </div>
+
+        <div class="row1">
+            <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput type="text" placeholder="ISBN Number" formControlName="_isbnnoEN" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput placeholder="رقم ISBN" formControlName="_isbnnoAR" required>
+            </mat-form-field>
+        </div>
+
+        <div class="row1">
+            <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput type="text" placeholder="Publishing Year" formControlName="_publishingyearEN" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 70%">
+              <input matInput type="date" placeholder="Select Date" formControlName="_publishingdateEN" required>
+              <!-- <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" dir='rtl' style="width: 70%">
+              <input matInput type="date" placeholder="سنة النشر" formControlName="_publishingdateAR" required>
+              <!-- <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput placeholder="حدد التاريخ" formControlName="_publishingyearAR" required>
+            </mat-form-field>
+        </div>
+
+        <div class="row1">
+            <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput type="text" placeholder="Local Depostit Number" formControlName="_ldnumberEN" >
+            </mat-form-field>
+            <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput placeholder="رقم الإيداع المحلي" formControlName="_ldnumberAR">
+            </mat-form-field>
+        </div>
+
+        <div class="row1">
+         <mat-form-field appearance="outline">
+           <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 20px;">mail</mat-icon>
+           <textarea matInput placeholder="Book Description" formControlName="_bookdescEN"></textarea>
+         </mat-form-field>
+         <mat-form-field appearance="outline" dir='rtl'>
+           <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 20px;">mail</mat-icon>
+           <textarea matInput placeholder="وصف الكتاب" formControlName="_bookdescAR"></textarea>
+         </mat-form-field>
+       </div>
+
+     <div class="d-flex" style="justify-content: center; padding-right: 95px;">
+         <p style="margin-right: 10px;">
+            Click on check box for allowing to take printout
+         </p>
+         <div class="form-check">
+           <input (ngModel)="checkboxState" formControlName="_isprinting" type="checkbox" class="form-check-input">
+         </div>
+         <p style="margin-left: 3px;">
+            انقر فوق خانة الاختيار للسماح بأخذ الطباعة 
+         </p>
+     </div>
+   </div>
+   <div class="row1">
+         <!-- <button mat-raised-button class="mat-elevation-z6 w-100 mt-3" style="background-color: black; color: white;" type="submit">APPROVED</button> -->
+         <button mat-raised-button class="mat-elevation-z6 w-100 mt-3" type="submit" style="background-color: black; color: white;" >SUBMIT</button>
+         <button mat-raised-button class="mat-elevation-z6 w-100 mt-3" style="background-color: black; color: white;" (click)="cancel()">CANCEL</button>
+   </div>
+   </div>
+ 
+ </div>
+</form>
+</div>

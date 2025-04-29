@@ -1,0 +1,16 @@
+// body {
+//     display: flex;
+//     align-content: center;
+//     justify-content: center;
+//     height: 100vh;
+//     overflow: hidden;
+// }
+
+.row {
+    display: flex;
+    gap: 0px;
+    // margin-left: 50px;
+    mat-form-field {
+      width: 47%;
+    }
+  }

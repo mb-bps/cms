@@ -1,0 +1,29 @@
+<!-- <mat-sidenav-container class="h-100"> -->
+    <div fxLayout="row" fxLayoutAlign="center center" class="h-100">
+        <form [formGroup]="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate fxFlex="90" fxFlex.gt-sm="90" fxFlex.sm="60" class="mat-elevation-z6">
+            <div class="p3" style="padding-bottom: 20px;">
+            <div class="row" style="margin-top: 30px;">
+              <mat-form-field appearance="outline">
+                <mat-label>Englis Title</mat-label>
+                  <input matInput placeholder="Bank Details" formControlName="titleEN">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Arabic Title</mat-label>
+                  <input matInput placeholder="Bank Details" formControlName="titleAR" style="text-align: right;">
+              </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>English Content</mat-label>
+                      <textarea matInput placeholder="English Content" formControlName="contentEN"></textarea>
+                 </mat-form-field>
+                 <mat-form-field appearance="outline">
+                    <mat-label>Arabic Content</mat-label>
+                      <textarea matInput placeholder="Arabic Content" formControlName="contentAR" style="text-align: right;"></textarea>
+                 </mat-form-field>
+            </div>
+            <button mat-raised-button color="primary" class="mat-elevation-z6 w-50 mt-3" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+<!-- </mat-sidenav-container> -->

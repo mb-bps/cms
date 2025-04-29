@@ -1,0 +1,34 @@
+<div class="profile-image" style="text-align: center; padding-bottom: 20px;">
+    <img src={{this.url}} alt="Image" style="height: 300px; width: 800px; margin-top: 25px; border-radius: 10px; object-fit:fill;">
+<button mat-mini-fab (click)="inputField.click()">
+  <mat-icon>edit</mat-icon>
+</button>
+</div>
+<input #inputField type="file" (change)="onSelectFile($event)" hidden>
+  <div fxLayout="row" fxLayoutAlign="center center" class="h-100">
+    <form [formGroup]="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate fxFlex="90" fxFlex.gt-sm="90" fxFlex.sm="60" class="mat-elevation-z6">
+        <div class="p3" style="padding-bottom: 20px;">
+        <div class="row" style="margin-top: 30px;">
+          <mat-form-field appearance="outline">
+            <mat-label>Englis Title</mat-label>
+              <input matInput placeholder="Bank Details" formControlName="en">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Arabic Title</mat-label>
+              <input matInput placeholder="Bank Details" formControlName="ar" style="text-align: right;">
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Englis Title</mat-label>
+              <input matInput placeholder="Bank Details" formControlName="en1">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Arabic Title</mat-label>
+              <input matInput placeholder="Bank Details" formControlName="ar1" style="text-align: right;">
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" class="mat-elevation-z6 w-50 mt-3" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

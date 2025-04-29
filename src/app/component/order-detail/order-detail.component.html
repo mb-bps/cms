@@ -1,0 +1,57 @@
+
+<mat-card>
+    <mat-card-header>
+        <h1>Order Detail Listing</h1>
+        
+    </mat-card-header>
+    <mat-card-content>
+        <table mat-table [dataSource]="datasource"matSort>
+            <ng-container matColumnDef="isbno_en">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>ISB # (EN)</th>
+                  <td mat-cell *matCellDef="let element">{{element.isbno_en}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="productName_en">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Book Title</th>
+                <td mat-cell *matCellDef="let element">{{element.productName_en}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="author_en">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Author</th>
+            <td mat-cell *matCellDef="let element">{{element.author_en}}</td>
+      </ng-container>
+         
+     
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
+        <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
+  </ng-container>
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Total</th>
+        <td mat-cell *matCellDef="let element">{{element.total}}</td>
+  </ng-container>
+  <ng-container matColumnDef="createdOn">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Purchase Date</th>
+    <td mat-cell *matCellDef="let element">{{element.createdOn}}</td>
+</ng-container>
+
+<ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let element">
+        @if(element.role!=='admin'){
+            <mat-icon class="hover:opacity-[0.6] cursor-pointer">visibility</mat-icon>
+            <!-- <button (click)="updaterole(element)" mat-raised-button color="primary">Update Role</button>
+            <button (click)="updatestatus(element)" mat-raised-button color="primary">Update Status</button> -->
+        }
+        
+    </td>
+</ng-container>
+            <tr class="table-header" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+        </table>
+    </mat-card-content>
+    <br>
+    <mat-card-footer>
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+    </mat-card-footer>
+</mat-card>

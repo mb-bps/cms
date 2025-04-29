@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row pt-3">
+      <div class="col-12" style="padding-left: 0;">
+        <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)"></app-tabs>
+      </div>
+    </div>
+    <div class="row">
+      <!-- <div class=""> -->
+        <div *ngIf="activatedTabIndex ==0">
+            <app-mainslider></app-mainslider>
+          </div>
+        <div *ngIf="activatedTabIndex ==1">
+          <app-aboutus></app-aboutus>
+        </div>
+        <div *ngIf="activatedTabIndex ==2">
+          <app-featuredimage></app-featuredimage>
+        </div>
+        <div *ngIf="activatedTabIndex ==3">
+          <app-buynow></app-buynow>
+        </div>
+        <div *ngIf="activatedTabIndex ==4">
+          <app-partners></app-partners>
+        </div>
+        <div *ngIf="activatedTabIndex ==5">
+          <app-advertisement></app-advertisement>
+        </div>
+        <div *ngIf="activatedTabIndex ==6">
+          <p>This Is Contact Us Page</p>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+  
+  
+  

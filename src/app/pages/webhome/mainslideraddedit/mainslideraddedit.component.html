@@ -1,0 +1,50 @@
+
+  <div class="profile-image p3" style="text-align: center; padding-bottom: 20px;">
+        <img src={{this.url}} alt="Image" style="height: 100px; width: 200px; margin-top: 15px; border-radius: 5px; object-fit: cover;">
+    <button mat-mini-fab (click)="inputField.click()">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+  <input #inputField type="file" (change)="onSelectFile($event)" hidden>
+<div style="overflow: hidden; overflow-y: scroll;">
+  <div class="p-3">
+    <form [formGroup]="detailForm" (ngSubmit)="onSubmit()">
+        <div style="overflow: hidden; overflow-y: scroll; height: 280px;">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Title English</mat-label>
+                  <input matInput type="text" placeholder="Title English" formControlName="titleEN" readonly>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Title Arabic</mat-label>
+                  <input matInput type="text" placeholder="Title Arabic" formControlName="titleAR">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Title1 English</mat-label>
+                  <input matInput type="text" placeholder="Title1 English" formControlName="title1EN" readonly>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Title1 Arabic</mat-label>
+                  <input matInput type="text" placeholder="Title1 Arabic" formControlName="title1AR">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Title2 English</mat-label>
+                  <input matInput type="text" placeholder="Title2 English" formControlName="title2EN" readonly>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Title2 Arabic</mat-label>
+                  <input matInput type="text" placeholder="Title2 Arabic" formControlName="title2AR">
+            </mat-form-field>
+        </div>
+
+        </div>
+        <div mat-dialog-actions class="action">
+            <button mat-raised-button color="warn" (click)="onCancel()"> Cancel </button>
+            <button mat-raised-button color="primary" type="submit"> Save </button>
+        </div>
+    </form>
+    </div>

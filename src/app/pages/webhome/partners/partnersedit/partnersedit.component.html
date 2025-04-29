@@ -1,0 +1,11 @@
+<div class="profile-image" style="text-align: center; padding: 40px;">
+    <img src={{this.url}} alt="Image" style="height: 100px; width: 200px; margin-top: 15px; border-radius: 5px; object-fit: fill;">
+<button mat-mini-fab (click)="inputField.click()">
+  <mat-icon>edit</mat-icon>
+</button>
+</div>
+<input #inputField type="file" (change)="onSelectFile($event)" hidden>
+<div mat-dialog-actions class="action">
+  <button mat-raised-button color="warn" (click)="onCancel()"> Cancel </button>
+  <button mat-raised-button color="primary" type="submit"> Save </button>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row pt-3">
+      <div class="col-12" style="padding-left: 0;">
+        <app-tabs [tabsArray]="tabs" (onTabChange)="tabChange($event)"></app-tabs>
+      </div>
+    </div>
+    <div class="row">
+      <!-- <div class=""> -->
+        <div *ngIf="activatedTabIndex ==0">
+            <p>This Is Printer Request Page</p>
+        </div>
+        <div *ngIf="activatedTabIndex ==1">
+            <app-printerstatistics></app-printerstatistics>
+          <!-- <app-aboutus></app-aboutus> -->
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+  
+  
+  

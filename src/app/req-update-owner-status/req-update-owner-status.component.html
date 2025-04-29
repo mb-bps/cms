@@ -1,0 +1,237 @@
+    <div fxLayout="row1" fxLayoutAlign="center center" class="h-100" style="width: 999px;">
+         <form [formGroup]="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate fxFlex="90" fxFlex.gt-sm="90" fxFlex.sm="60" class="mat-elevation-z6">
+              <div class="p-4">
+                  <div class="p-3">
+                  <div style="overflow: hidden; overflow-y: scroll; height: 650px;">
+                <div class="row1">
+                    <mat-form-field appearance="outline">
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                        <input matInput type="text" placeholder="Publishing House" formControlName="_publisher_nameEN" >
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" dir='rtl'>
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                        <input matInput placeholder="اسم دار النشر" formControlName="_publisher_nameAR">
+                    </mat-form-field>
+                </div>
+
+                <div class="row1">
+                    <mat-form-field appearance="outline">
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                        <input matInput type="text" placeholder="Official Contact Number" formControlName="_official_contact_numberEN">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" dir='rtl'>
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                        <input matInput placeholder="رقم الاتصال الرسمي لدار النشر" formControlName="_official_contact_numberAR">
+                    </mat-form-field>
+                </div>
+
+                <div class="row1">
+                    <mat-form-field appearance="outline">
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                        <input matInput type="text" placeholder="Official Email Adderss" formControlName="_official_emailEN">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" dir='rtl'>
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                        <input matInput placeholder="البريد الإلكتروني الرسمي لدار النشر" formControlName="_official_emailAR">
+                    </mat-form-field>
+                </div>
+
+                <div class="row1">
+                    <mat-form-field appearance="outline">
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                        <input matInput type="text" placeholder="Publishing House Website" formControlName="_official_websiteEN">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" dir='rtl'>
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                        <input matInput placeholder="موقع دار النشر" formControlName="_official_websiteAR">
+                    </mat-form-field>
+                </div>
+
+                <div class="row1">
+                    <mat-form-field appearance="outline">
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                        <input matInput type="text" placeholder="Registration Document" formControlName="_legal_registration_documentEN">
+                    </mat-form-field>
+                    <div class="flex items-center relative ">
+                        <img src={{this.url}} alt="Image" style="height: 37px; width: 40px; margin-top: 20px; border-radius: 10px; ">
+                    </div>
+                    <mat-form-field appearance="outline" dir='rtl'>
+                        <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                        <input matInput placeholder="اضغط على الأيقونة لتحميل وثيقة التسجيل التجاري" formControlName="_legal_registration_documentAR">
+                    </mat-form-field>
+                </div>
+
+                <div class="row1">
+                  <mat-form-field appearance="outline">
+                      <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                      <input matInput type="text" placeholder="License Number" formControlName="_license_numberEN">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" style="width: 70%">
+                    <input matInput [matDatepicker]="picker" placeholder="Expiry Date" formControlName="_license_expiry_dateEN">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" dir='rtl' style="width: 70%">
+                    <input matInput [matDatepicker]="picker1" placeholder="تاريخ انتهاء " formControlName="_license_expiry_dateAR">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" dir='rtl'>
+                      <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                      <input matInput placeholder="رقم الترخيص" formControlName="_license_numberAR">
+                  </mat-form-field>
+              </div>
+
+              <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput type="text" placeholder="PO Box/Postal/ZIP Code" formControlName="_address_zipEN">
+                </mat-form-field>
+                <mat-form-field appearance="outline" dir='rtl'>
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput placeholder="صندوق البريد / الرمز البريدي" formControlName="_address_zipAR">
+                </mat-form-field>
+              </div>
+
+              <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput type="text" placeholder="Street Address" formControlName="_address_streetEN">
+                </mat-form-field>
+                <mat-form-field appearance="outline" dir='rtl'>
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput placeholder="عنوان الشارع" formControlName="_address_streetAR">
+                </mat-form-field>
+              </div>
+
+              <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput type="text" placeholder="State/Municipality" formControlName="_address_stateEN">
+                </mat-form-field>
+                <mat-form-field appearance="outline" dir='rtl'>
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput placeholder="الولاية / البلدية" formControlName="_address_stateAR">
+                </mat-form-field>
+              </div>
+
+              <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput type="text" placeholder="City" formControlName="_address_cityEN">
+                </mat-form-field>
+                <mat-form-field appearance="outline" dir='rtl'>
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput placeholder="المدينة" formControlName="_address_cityAR">
+                </mat-form-field>
+              </div>
+
+              <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput type="text" placeholder="Country" formControlName="_address_countryEN">
+                </mat-form-field>
+                <mat-form-field appearance="outline" dir='rtl'>
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput placeholder="الدولة" formControlName="_address_countryAR">
+                </mat-form-field>
+              </div>
+
+              <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput type="text" placeholder="Contact First Name" formControlName="_first_nameEN">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                  <input matInput type="text" placeholder="Contact Last Name" formControlName="_last_nameEN">
+                </mat-form-field>
+                <mat-form-field appearance="outline" dir='rtl'>
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput placeholder="الاسم الأول للشخص المسؤول" formControlName="_first_nameAR">
+                </mat-form-field>
+                <mat-form-field appearance="outline" dir='rtl'>
+                  <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                  <input matInput placeholder="الاسم الأخير للشخص المسؤول" formControlName="_last_nameAR">
+              </mat-form-field>
+              </div>
+
+              <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput type="text" placeholder="QID Number" formControlName="_qid_numberEN">
+                </mat-form-field>
+                <div class="flex items-center relative ">
+                    <img src={{this.url1}} alt="Image" style="height: 37px; width: 40px; margin-top: 20px; border-radius: 10px; ">
+                </div>
+                <mat-form-field appearance="outline" dir='rtl'>
+                    <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                    <input matInput placeholder="رقم الهوية" formControlName="_qid_numberAR">
+                </mat-form-field>
+            </div>
+
+            <div class="row1">
+            <mat-form-field appearance="outline">
+              <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+              <input matInput type="text" placeholder="Manager Email" formControlName="_contact_emailEN">
+              </mat-form-field>
+                <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput placeholder="البريد الإلكتروني للمدير" formControlName="_contact_emailAR">
+              </mat-form-field>
+            </div>
+
+            <div class="row1">
+              <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                <input matInput type="text" placeholder="Manager Contact No." formControlName="_contact_numberEN">
+                </mat-form-field>
+                <mat-form-field appearance="outline" dir='rtl'>
+                  <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 10px;">person</mat-icon>
+                  <input matInput placeholder="رقم الاتصال بالمدير" formControlName="_contact_numberAR">
+                </mat-form-field>
+            </div>
+
+            <div class="row1">
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Password" formControlName="_passwordEN" [type]="showPassword ? 'text' : 'password'" minlength="6">
+                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                  {{showPassword?'visibility_off':'visibility'}}
+                </mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="row1">
+              <mat-form-field appearance="outline">
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 20px;">mail</mat-icon>
+                <textarea matInput placeholder="Additional Notes" formControlName="_additional_notesEN"></textarea>
+              </mat-form-field>
+              <mat-form-field appearance="outline" dir='rtl'>
+                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color" style="padding-top: 20px;">mail</mat-icon>
+                <textarea matInput placeholder="ملاحظات إضافية" formControlName="_additional_notesAR"></textarea>
+              </mat-form-field>
+            </div>
+
+            <div class="d-flex" style="justify-content: center; padding-right: 95px;">
+              <p style="margin-right: 10px;">
+                Click here to accept the <span style="color: blue;"><u>Terms & Policies</u></span>
+              </p>
+              <div class="form-check">
+                <input (ngModel)="checkboxState" formControlName="_acknowledgment" type="checkbox" class="form-check-input">
+              </div>
+              <p style="margin-left: 3px;">
+                اضغط هنا لقبول <span style="color: blue;"><u>الشروط والسياسات</u></span>
+              </p>
+          </div>
+        </div>
+        <div class="row1">
+              <button mat-raised-button class="mat-elevation-z6 w-100 mt-3" style="background-color: black; color: white;" type="submit">APPROVED</button>
+              <button mat-raised-button class="mat-elevation-z6 w-100 mt-3" style="background-color: black; color: white;" (click)="return()">RETURN</button>
+              <button mat-raised-button class="mat-elevation-z6 w-100 mt-3" style="background-color: black; color: white;" (click)="reject()">REJECT</button>
+        </div>
+        </div>
+      
+      </div>
+    </form>
+    </div>
+  

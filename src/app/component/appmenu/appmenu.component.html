@@ -1,0 +1,58 @@
+@if(showmenu){
+    <!-- <div dir="rtl"> -->
+        <div>
+        <mat-toolbar color="primary" class="mat-elevation-z8" style="position: relative; z-index: 5">
+            <button mat-icon-button (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>Access Management system</span>
+            <span class="example-spacer"></span>
+            <div>
+            <button class="example-spacer" mat-button><mat-icon matBadge="15" matBadgeColor="warn" style="height: 30px; width: 30px; font-size: 30px; padding-bottom: 10px;">notifications</mat-icon></button>
+            <span style="display: inline-block;">Welcome {{Loginuser}}</span>
+            <button class="example-spacer" mat-icon-button [matMenuTriggerFor]="profile">
+                <mat-icon style="height: 30px; width: 30px; font-size: 30px;">account_circle</mat-icon></button>
+            <mat-menu #profile>
+                <button mat-menu-item>Userprofile</button>
+                <button mat-menu-item routerLink="/resetpassword">Resetpassword</button>
+                <button mat-menu-item routerLink="/login">Logout</button>
+            </mat-menu>
+            </div>
+        </mat-toolbar>
+        <mat-drawer-container autosize>
+            
+            <mat-drawer #drawer opened="true" mode="side" position="start">
+            <div fxLayout="column" fxLayoutAlign="center center" class="user-block" > 
+                <img src="../../../assets/images/logo.png" style="width: 95%; padding-left: 15px; padding-top: 15px;" alt="user-image">
+            </div>
+                <mat-nav-list class="sidebar">
+                        <hr>
+                    <mat-list-item class="scrollbox">
+                        <button mat-button routerLink=""><mat-icon>home</mat-icon>Home</button>
+                        <!-- <hr> -->
+                    </mat-list-item>
+                    <hr>
+                    @for(item of menulist;track item){
+                        <mat-list-item class="scrollbox-inner">
+                            <button mat-button routerLink="{{item.code}}"><mat-icon>{{item.icons}}</mat-icon>{{item.code}}</button>
+                        </mat-list-item>
+                        <hr>
+                    } 
+                </mat-nav-list>
+    
+            </mat-drawer>
+            <mat-drawer-content>
+                <div style="text-align: center;min-height: 700px;">
+                    <router-outlet></router-outlet>
+                </div>
+            </mat-drawer-content>
+    
+        </mat-drawer-container>
+    
+    
+    </div>
+}@else{
+    <div style="text-align: center;min-height: 700px;">
+        <router-outlet></router-outlet>
+    </div> 
+}

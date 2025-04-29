@@ -1,0 +1,55 @@
+
+    
+    <mat-card-content>
+        <table mat-table [dataSource]="datasource"matSort>
+            <ng-container matColumnDef="image">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 12px;">Image</th>
+                  <img mat-cell *matCellDef="let element" src={{this.imageURL}}{{element.image}} alt="Image" style="height: 40px; width: 60px; margin-top: 5px; border-radius: 5px; object-fit: cover;">
+            </ng-container>
+            <ng-container matColumnDef="titleEN">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 12px;">TitleEN</th>
+                <td mat-cell *matCellDef="let element" style="font-size: 12px;">{{element.titleEN}}</td>
+            </ng-container>
+            <ng-container matColumnDef="titleAR">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 12px;">TitleAR</th>
+                <td mat-cell *matCellDef="let element" style="font-size: 12px;">{{element.titleAR}}</td>
+            </ng-container>
+            <ng-container matColumnDef="title1EN">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 12px;">TitleEN</th>
+                <td mat-cell *matCellDef="let element" style="font-size: 12px;">{{element.title1EN}}</td>
+            </ng-container>
+            <ng-container matColumnDef="title1AR">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 12px;">TitleAR</th>
+                <td mat-cell *matCellDef="let element" style="font-size: 12px;">{{element.title1AR}}</td>
+            </ng-container>
+            <ng-container matColumnDef="title2EN">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 12px;">TitleEN</th>
+                <td mat-cell *matCellDef="let element" style="font-size: 12px;">{{element.title2EN}}</td>
+            </ng-container>
+            <ng-container matColumnDef="title2AR">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 12px;">TitleAR</th>
+                <td mat-cell *matCellDef="let element" style="font-size: 12px;">{{element.title2AR}}</td>
+            </ng-container>
+
+<ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef style="font-size: 12px;">ACTION</th>
+    <td mat-cell *matCellDef="let row">
+        @if(row.role!=='admin'){
+            <button mat-icon-button color="primary" matTooltip="Edit Slidr" (click)="EditForm(row.id)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="primary" matTooltip="Preview" (click)="openEditForm(row)">
+                <mat-icon>remove_red_eye</mat-icon>
+              </button>
+        }
+        
+    </td>
+</ng-container>
+            <tr class="table-header" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+        </table>
+    </mat-card-content>
+    <br>
+    <mat-card-footer>
+        <mat-paginator [pageSizeOptions]="[5, 10, 50]" showFirstLastButtons></mat-paginator>
+    </mat-card-footer>

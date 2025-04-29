@@ -1,0 +1,84 @@
+<!-- <mat-card dir="rtl"> -->
+<mat-card>
+  <mat-card-header>
+    <h1 style="margin-top: 12px" class="example-spacer">
+      User Role Assignment
+    </h1>
+    <mat-card-actions>
+      <div style="margin: 5px; width: 80%">
+        <button style="border-radius: 50px" mat-raised-button color="primary">
+          Add Role
+        </button>
+      </div>
+      <div style="margin: 5px; width: 100%">
+        <button style="border-radius: 50px" mat-raised-button color="accent">
+          Delete Role
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card-header>
+  <form [formGroup]="roleform" (ngSubmit)="Saveroles()">
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Select user Role</mat-label>
+        <mat-select
+          formControlName="userrole"
+          (selectionChange)="rolechange($event)"
+        >
+          @for(item of rolelist;track item){
+          <mat-option value="{{ item.code }}">{{ item.name }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-card>
+        <mat-card-content>
+          <div class="table-wrapper">
+            <table style="width: 100%" formArrayName="access">
+              <tbody>
+                <tr
+                  *ngFor="let item of getrows.controls; let i = index"
+                  [formGroupName]="i"
+                >
+                  <td style="text-align: left;">{{ item.value.menucode }}</td>
+                  <td style="text-align: center">
+                    <mat-checkbox formControlName="haveview"></mat-checkbox>
+                  </td>
+                  <td style="text-align: center">
+                    <mat-checkbox formControlName="haveadd"></mat-checkbox>
+                  </td>
+                  <td style="text-align: center">
+                    <mat-checkbox formControlName="haveedit"></mat-checkbox>
+                  </td>
+                  <td style="text-align: center">
+                    <mat-checkbox formControlName="havedelete"></mat-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th style="text-align: center">Menu Name</th>
+                  <th style="text-align: center">Have View</th>
+                  <th style="text-align: center">Have Add</th>
+                  <th style="text-align: center">Have Edit</th>
+                  <th style="text-align: center">Have Delete</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-card-content>
+    <mat-card-actions style="display: grid; justify-items: center">
+      <div class="div-25">
+        <button
+          style="border-radius: 50px"
+          type="submit"
+          mat-raised-button
+          color="primary"
+        >
+          Save
+        </button>
+      </div>
+    </mat-card-actions>
+  </form>
+</mat-card>

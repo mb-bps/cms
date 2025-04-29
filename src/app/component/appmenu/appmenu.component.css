@@ -1,0 +1,27 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+}
+
+.scrollbox {
+    overflow: auto;
+}
+
+.scrollbox-inner {
+    font-size: 20px;
+    color: #000;
+}
+
+.mat-toolbar.mat-primary {
+    background: #8a1538;
+}
+
+hr {
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+    margin-top:  0px;
+}

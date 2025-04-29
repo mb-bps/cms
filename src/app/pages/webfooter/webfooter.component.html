@@ -1,0 +1,163 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="h-100">
+    <form [formGroup]="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate fxFlex="90" fxFlex.gt-sm="90" fxFlex.sm="60" class="mat-elevation-z6">
+        <div class="p3" style="padding-bottom: 20px;">
+            <div style="overflow: hidden; overflow-y: scroll; height: 440px;">
+        <div class="row1" style="margin-top: 30px;">
+          <mat-form-field appearance="outline">
+            <mat-label>English</mat-label>
+              <input matInput placeholder="Ministry of Culture Heading" formControlName="ministryEN">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Arabic</mat-label>
+              <input matInput placeholder="Ministry of Culture Heading" formControlName="ministryAR" style="text-align: right;">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>English</mat-label>
+              <input matInput placeholder="About Us" formControlName="aboutusEN">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Arabic</mat-label>
+              <input matInput placeholder="About Us" formControlName="aboutusAR" style="text-align: right;">
+         </mat-form-field>
+        </div>
+
+        <div class="row1">
+          <mat-form-field appearance="outline">
+              <mat-label>English</mat-label>
+                <input matInput placeholder="Categories" formControlName="categoriesEN">
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+              <mat-label>Arabic</mat-label>
+                <input matInput placeholder="Categories" formControlName="categoriesAR" style="text-align: right;">
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+            <mat-label>English</mat-label>
+              <input matInput placeholder="Other" formControlName="otherEN">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Arabic</mat-label>
+              <input matInput placeholder="Other" formControlName="otherAR" style="text-align: right;">
+         </mat-form-field>
+      </div>
+
+    <div class="row1">
+      <mat-form-field appearance="outline">
+          <mat-label>English</mat-label>
+            <textarea matInput placeholder="Disclaimer" formControlName="disclaimerEN"></textarea>
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+          <mat-label>Arabic</mat-label>
+            <textarea matInput placeholder="Disclaimer" formControlName="disclaimerAR" style="text-align: right;"></textarea>
+       </mat-form-field>
+    </div>
+
+    <div class="row1">
+      <mat-form-field appearance="outline">
+          <mat-label>English</mat-label>
+            <input matInput placeholder="Home" formControlName="homeEN">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+          <mat-label>Arabic</mat-label>
+            <input matInput placeholder="Home" formControlName="homeAR" style="text-align: right;">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+        <mat-label>English</mat-label>
+          <input matInput placeholder="Return & Refund" formControlName="returnEN">
+     </mat-form-field>
+     <mat-form-field appearance="outline">
+        <mat-label>Arabic</mat-label>
+          <input matInput placeholder="Return & Refund" formControlName="returnAR" style="text-align: right;">
+     </mat-form-field>
+    </div> 
+    
+    <div class="row1">
+      <mat-form-field appearance="outline">
+          <mat-label>English</mat-label>
+            <input matInput placeholder="Terms & Conditions" formControlName="termsEN">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+          <mat-label>Arabic</mat-label>
+            <input matInput placeholder="Terms & Conditions" formControlName="termsAR" style="text-align: right;">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>English</mat-label>
+          <input matInput placeholder="Privacy Policy" formControlName="privacyEN">
+     </mat-form-field>
+     <mat-form-field appearance="outline">
+        <mat-label>Arabic</mat-label>
+          <input matInput placeholder="Privacy Policy" formControlName="privacyAR" style="text-align: right;">
+  </mat-form-field>
+    </div>
+
+    <div class="row1">
+        <mat-form-field appearance="outline">
+            <mat-label>English</mat-label>
+              <input matInput placeholder="FAQ" formControlName="faqEN">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Arabic</mat-label>
+              <input matInput placeholder="FAQ" formControlName="faqAR" style="text-align: right;">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+          <mat-label>English</mat-label>
+            <input matInput placeholder="History" formControlName="historyEN">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+          <mat-label>Arabic</mat-label>
+            <input matInput placeholder="History" formControlName="historyAR" style="text-align: right;">
+    </mat-form-field>
+      </div>
+
+      <div class="row1">
+        <mat-form-field appearance="outline">
+            <mat-label>English</mat-label>
+              <input matInput placeholder="Movies" formControlName="moviesEN">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Arabic</mat-label>
+              <input matInput placeholder="Movies" formControlName="moviesAR" style="text-align: right;">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+          <mat-label>English</mat-label>
+            <input matInput placeholder="Drama" formControlName="dramaEN">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+          <mat-label>Arabic</mat-label>
+            <input matInput placeholder="Drama" formControlName="dramaAR" style="text-align: right;">
+    </mat-form-field>
+      </div>
+      
+      <div class="row1">
+        <mat-form-field appearance="outline">
+            <mat-label>English</mat-label>
+              <input matInput placeholder="Recipe" formControlName="recipeEN">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Arabic</mat-label>
+              <input matInput placeholder="Recipe" formControlName="recipeAR" style="text-align: right;">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+          <mat-label>English</mat-label>
+            <input matInput placeholder="Feedback" formControlName="feedbackEN">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+          <mat-label>Arabic</mat-label>
+            <input matInput placeholder="Feedback" formControlName="feedbackAR" style="text-align: right;">
+    </mat-form-field>
+      </div>
+
+      <!-- <div class="row1">
+        <mat-form-field appearance="outline">
+            <mat-label>English</mat-label>
+              <input matInput placeholder="News Latter" formControlName="newslatterEN">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Arabic</mat-label>
+              <input matInput placeholder="News Latter" formControlName="newslatterAR" style="text-align: right;">
+      </mat-form-field>
+      </div> -->
+            </div>
+      <button mat-raised-button class="mat-elevation-z6 w-50 mt-3" style="background-color: #8a1538; color: white;" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

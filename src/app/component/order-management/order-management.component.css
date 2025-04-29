@@ -1,0 +1,58 @@
+mat-card {
+  margin: 2%;
+  text-align: left;
+  width: 90%;
+  margin-left: 5%;
+  border: 1px solid #ccc;
+}
+.mat-mdc-raised-button{
+  width:auto;
+}
+
+.table-header{
+  position: sticky;
+  background-color: #8a1538;
+  color: white;
+}
+
+.title {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.h-28{
+height: 28vh;
+}
+
+.w-100{
+width: 100%;
+}
+
+.w-180px{
+width: 180px !important;
+}
+
+.w-240px{
+width: 240px !important;
+}
+
+.border-bottom{
+border-bottom: 2px solid gray;
+}
+
+.model{
+padding: 20px;
+max-height: 95vh;
+overflow: auto;
+}
+
+.label{
+color: black;
+font-size: 14px;
+letter-spacing: 1px;
+font-weight: 600;
+}
+
+.w-45{
+width: 45%;
+}

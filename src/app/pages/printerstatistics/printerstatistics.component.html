@@ -1,0 +1,223 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="h-100">
+    <form [formGroup]="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate fxFlex="90" fxFlex.gt-sm="90" fxFlex.sm="60" class="mat-elevation-z6">
+        <div class="p3" style="padding-bottom: 20px;">
+            <div style="overflow: hidden; overflow-y: scroll; height: 440px;">
+        <div class="row2">
+        <h1 style="text-align: left; padding-left: 20px;">Printer Statistics</h1>
+        <h1 dir="rtl" style="text-align: right; padding-right: 20px;">إحصائيات الطابعة</h1>
+        </div>
+        <div class="row1" style="margin-top: 10px;">
+          <mat-form-field appearance="outline">
+            <mat-label>Printer Status</mat-label>
+              <input matInput placeholder="Printer Status" formControlName="printerstatusEN">
+          </mat-form-field>
+          <mat-form-field dir="rtl" appearance="outline">
+            <mat-label>حالة الطابعة</mat-label>
+              <input matInput placeholder="حالة الطابعة" formControlName="printerstatusAR" style="text-align: right;">
+          </mat-form-field>
+        </div>
+        <div class="row2">
+            <h2 style="text-align: left; padding-left: 20px;">Printer Job</h2>
+            <h2 dir="rtl" style="text-align: right; padding-right: 20px;">وظيفة الطابعة</h2>
+        </div>
+        <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Current Job ID</mat-label>
+                <input matInput placeholder="Current Job ID" formControlName="jobidEN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>معرف الوظيفة الحالية</mat-label>
+                <input matInput placeholder="معرف الوظيفة الحالية" formControlName="jobidAR" style="text-align: right;">
+            </mat-form-field>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Job Status</mat-label>
+                <input matInput placeholder="Job Status" formControlName="jobstatusEN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>حالة الوظيفة</mat-label>
+                <input matInput placeholder="حالة الوظيفة" formControlName="jobstatusAR" style="text-align: right;">
+            </mat-form-field>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Last Job Completed</mat-label>
+                <input matInput placeholder="Last Job Completed" formControlName="lastjobEN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>آخر وظيفة تم إنجازها</mat-label>
+                <input matInput placeholder="آخر وظيفة تم إنجازها" formControlName="lastjobAR" style="text-align: right;">
+            </mat-form-field>
+          </div>
+          <div class="row2">
+            <h2 style="text-align: left; padding-left: 20px;">Toner & Cartridge</h2>
+            <h2 dir="rtl" style="text-align: right; padding-right: 20px;">حبر وخرطوشة</h2>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Cyan</mat-label>
+                <input matInput placeholder="Cyan" formControlName="cyanEN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>سماوي</mat-label>
+                <input matInput placeholder="سماوي" formControlName="cyanAR" style="text-align: right;">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Magenta</mat-label>
+                  <input matInput placeholder="Magenta" formControlName="magentaEN">
+              </mat-form-field>
+              <mat-form-field dir="rtl" appearance="outline">
+                <mat-label>أرجواني</mat-label>
+                  <input matInput placeholder="أرجواني" formControlName="magentaAR" style="text-align: right;">
+              </mat-form-field>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Black</mat-label>
+                <input matInput placeholder="Black" formControlName="blackEN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>أسود</mat-label>
+                <input matInput placeholder="أسود" formControlName="blackAR" style="text-align: right;">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Yellow</mat-label>
+                  <input matInput placeholder="Yellow" formControlName="yellowEN">
+              </mat-form-field>
+              <mat-form-field dir="rtl" appearance="outline">
+                <mat-label>أصفر</mat-label>
+                  <input matInput placeholder="أصفر" formControlName="yellowAR" style="text-align: right;">
+              </mat-form-field>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Total Average Ink</mat-label>
+                <input matInput placeholder="Total Average Ink" formControlName="totalinkEN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>إجمالي متوسط ​​الحبر</mat-label>
+                <input matInput placeholder="إجمالي متوسط ​​الحبر" formControlName="totalinkAR" style="text-align: right;">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Toner Status</mat-label>
+                  <input matInput placeholder="Toner Status" formControlName="tonerstatusEN">
+              </mat-form-field>
+              <mat-form-field dir="rtl" appearance="outline">
+                <mat-label>حالة الحبر</mat-label>
+                  <input matInput placeholder="حالة الحبر" formControlName="tonerstatusAR" style="text-align: right;">
+              </mat-form-field>
+          </div>
+          <div class="row2">
+            <h2 style="text-align: left; padding-left: 20px;">Paper Handling</h2>
+            <h2 dir="rtl" style="text-align: right; padding-right: 20px;">التعامل مع الورق</h2>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Total Paper Capacity</mat-label>
+                <input matInput placeholder="Total Paper Capacity" formControlName="papercapacityEN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>إجمالي سعة الورق</mat-label>
+                <input matInput placeholder="إجمالي سعة الورق" formControlName="papercapacityAR" style="text-align: right;">
+            </mat-form-field>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Remaining Paper - Tray 1</mat-label>
+                <input matInput placeholder="Remaining Paper - Tray 1" formControlName="remainingpapertr1EN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>الورق المتبقي - الدرج 1</mat-label>
+                <input matInput placeholder="الورق المتبقي - الدرج 1" formControlName="remainingpapertr1AR" style="text-align: right;">
+            </mat-form-field>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Remaining Paper - Tray 2</mat-label>
+                <input matInput placeholder="Remaining Paper - Tray 2" formControlName="remainingpapertr2EN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>الورق المتبقي - الدرج 2</mat-label>
+                <input matInput placeholder="الورق المتبقي - الدرج 2" formControlName="remainingpapertr2AR" style="text-align: right;">
+            </mat-form-field>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Paper Size & Type - Tray 1</mat-label>
+                <input matInput placeholder="Paper Size & Type - Tray 1" formControlName="papersizetr1EN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>حجم الورق ونوعه - الدرج 1</mat-label>
+                <input matInput placeholder="حجم الورق ونوعه - الدرج 1" formControlName="papersizetr1AR" style="text-align: right;">
+            </mat-form-field>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Paper Size & Type - Tray 2</mat-label>
+                <input matInput placeholder="Paper Size & Type - Tray 2" formControlName="papersizetr2EN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>حجم الورق ونوعه - الدرج 2</mat-label>
+                <input matInput placeholder="حجم الورق ونوعه - الدرج 2" formControlName="papersizetr2AR" style="text-align: right;">
+            </mat-form-field>
+          </div>
+          <div class="row2">
+            <h2 style="text-align: left; padding-left: 20px;">Print Setting</h2>
+            <h2 dir="rtl" style="text-align: right; padding-right: 20px;">إعداد الطباعة</h2>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Print Mode</mat-label>
+                <input matInput placeholder="Print Mode" formControlName="printmodeEN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>وضع الطباعة</mat-label>
+                <input matInput placeholder="وضع الطباعة" formControlName="printmodeAR" style="text-align: right;">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Print Speed</mat-label>
+                  <input matInput placeholder="Print Speed" formControlName="printspeedEN">
+              </mat-form-field>
+              <mat-form-field dir="rtl" appearance="outline">
+                <mat-label>سرعة الطباعة</mat-label>
+                  <input matInput placeholder="سرعة الطباعة" formControlName="printspeedAR" style="text-align: right;">
+              </mat-form-field>
+          </div>
+          <div class="row2">
+            <h2 style="text-align: left; padding-left: 20px;">Print Usage Statistics</h2>
+            <h2 dir="rtl" style="text-align: right; padding-right: 20px;">إحصائيات استخدام الطباعة</h2>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Total Sheets Printed</mat-label>
+                <input matInput placeholder="Total Sheets Printed" formControlName="sheetprintedEN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+              <mat-label>إجمالي الأوراق المطبوعة</mat-label>
+                <input matInput placeholder="إجمالي الأوراق المطبوعة" formControlName="sheetprintedAR" style="text-align: right;">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Average Print Duration</mat-label>
+                  <input matInput placeholder="Average Print Duration" formControlName="printdurationEN">
+              </mat-form-field>
+              <mat-form-field dir="rtl" appearance="outline">
+                <mat-label>متوسط ​​مدة الطباعة</mat-label>
+                  <input matInput placeholder="متوسط ​​مدة الطباعة" formControlName="printdurationAR" style="text-align: right;">
+              </mat-form-field>
+          </div>
+          <div class="row1" style="margin-top: 0px;">
+            <mat-form-field appearance="outline">
+              <mat-label>Total Number of Jobs Processed</mat-label>
+                <input matInput placeholder="Total Number of Jobs Processed" formControlName="noofjobsEN">
+            </mat-form-field>
+            <mat-form-field dir="rtl" appearance="outline">
+                <mat-label>إجمالي عدد الوظائف التي تمت معالجتها</mat-label>
+                  <input matInput placeholder="إجمالي عدد الوظائف التي تمت معالجتها" formControlName="noofjobsAR" style="text-align: right;">
+              </mat-form-field>
+          </div>
+            </div>
+      <button mat-raised-button class="mat-elevation-z6 w-50 mt-3" style="background-color: #8a1538; color: white;" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

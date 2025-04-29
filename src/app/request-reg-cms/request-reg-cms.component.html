@@ -1,0 +1,125 @@
+@if(role ==='Reviewer') {
+  <h1 style="padding-top: 30px;">Request for Reviewer</h1>
+    <div class="main-body">
+  
+        <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. James" #input>
+        </mat-form-field>
+
+        <div class="table-container">
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z24 topo">
+      
+              <ng-container matColumnDef="request_type">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 50px;">Type</th>
+                <td mat-cell *matCellDef="let row" >{{row.request_type}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="account_type">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 50px;">Sender</th>
+                <td mat-cell *matCellDef="let row" >{{row.account_type}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="publisher_nameEN">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 50px;">Name</th>
+                <td mat-cell *matCellDef="let row" >{{row.publisher_nameEN}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="created_at">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 50px;">Submission Date</th>
+                <td mat-cell *matCellDef="let row" >{{row.created_at | date:'dd/MM/yyyy'}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="current_status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 50px;">Status</th>
+                <td mat-cell *matCellDef="let row" >{{row.current_status}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 65px;"> Action </th>
+                <td mat-cell *matCellDef="let row">
+                  <!-- <button mat-icon-button color="primary" matTooltip="View Detail" (click)="viewRequest()">
+                    <mat-icon>remove_red_eye</mat-icon>
+                  </button> -->
+                  <button mat-icon-button color="warn" style="margin-left: 37px;" matTooltip="Change Status" (click)="editRequest(row.id)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+              </tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of Leads"></mat-paginator>
+        </div>
+    </div>
+
+
+    }
+
+
+@if(role==='Publishing House (Externel)') {
+  <h1 style="padding-top: 30px;">Request from Customer</h1>
+  <div class="main-body">
+
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. James" #input>
+      </mat-form-field>
+
+      <div class="table-container">
+          <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z24 topo">
+    
+            <ng-container matColumnDef="request_type">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 50px;">Type</th>
+              <td mat-cell *matCellDef="let row" >{{row.request_type}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="account_type">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 50px;">Sender</th>
+              <td mat-cell *matCellDef="let row" >{{row.account_type}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="publisher_nameEN">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 50px;">Name</th>
+              <td mat-cell *matCellDef="let row" >{{row.publisher_nameEN}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="created_at">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 50px;">Submission Date</th>
+              <td mat-cell *matCellDef="let row" >{{row.created_at | date:'dd/MM/yyyy'}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="current_status">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 50px;">Status</th>
+              <td mat-cell *matCellDef="let row" >{{row.current_status}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 65px;"> Action </th>
+              <td mat-cell *matCellDef="let row">
+                <!-- <button mat-icon-button color="primary" matTooltip="View Detail" (click)="viewRequest()">
+                  <mat-icon>remove_red_eye</mat-icon>
+                </button> -->
+                <button mat-icon-button color="warn" style="margin-left: 37px;" matTooltip="Change Status" (click)="editRequest(row.id)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of Leads"></mat-paginator>
+      </div>
+  </div>
+
+    }

@@ -1,0 +1,31 @@
+mat-card {
+    margin: 2%;
+    text-align: left;
+    width: 90%;
+    margin-left: 5%;
+    border: 1px solid #ccc;
+}
+
+/* table {
+    border: 1px solid black;
+} */
+
+thead {
+    position: sticky;
+    top: 0px;
+    background-color: #8a1538;
+    color: white;
+}
+
+.table-wrapper {
+    overflow-y: scroll;
+    overflow-x: scroll;
+    height: fit-content;
+    max-height: 46.4vh;
+    
+    margin-top: 22px;
+    
+    margin: 15px;
+    padding-bottom: 20px;
+}
+

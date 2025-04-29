@@ -1,0 +1,9 @@
+<div class="profile-image" style="text-align: center; padding-bottom: 20px;">
+    <p style="text-transform:uppercase; margin-top: 20px;">{{this.name}}</p>
+    <img src={{this.url}} alt="Image" style="height: 350px; width: 300px; margin-top: 25px; border-radius: 10px; object-fit: fill;">
+<button mat-mini-fab (click)="inputField.click()">
+  <mat-icon>edit</mat-icon>
+</button>
+</div>
+<input #inputField type="file" (change)="onSelectFile($event)" hidden>
+<button type="submit" (click)="onSubmit()">Submit</button>

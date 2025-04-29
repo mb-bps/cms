@@ -1,0 +1,93 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="h-100">
+    <form [formGroup]="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate fxFlex="90" fxFlex.gt-sm="90" fxFlex.sm="60" class="mat-elevation-z6">
+        <div class="p3" style="padding-bottom: 20px;">
+        <div class="row1" style="margin-top: 30px;">
+          <mat-form-field appearance="outline">
+            <mat-label>English</mat-label>
+              <input matInput placeholder="About Us" formControlName="aboutusEN">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Arabic</mat-label>
+              <input matInput placeholder="About Us" formControlName="aboutusAR" style="text-align: right;">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>English</mat-label>
+              <input matInput placeholder="Books" formControlName="booksEN">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Arabic</mat-label>
+              <input matInput placeholder="Books" formControlName="booksAR" style="text-align: right;">
+         </mat-form-field>
+        </div>
+
+        <div class="row1">
+          <mat-form-field appearance="outline">
+              <mat-label>English</mat-label>
+                <input matInput placeholder="Contact Us" formControlName="contactusEN">
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+              <mat-label>Arabic</mat-label>
+                <input matInput placeholder="Contact Us" formControlName="contactusAR" style="text-align: right;">
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+            <mat-label>English</mat-label>
+              <input matInput placeholder="Register" formControlName="registerEN">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Arabic</mat-label>
+              <input matInput placeholder="Register" formControlName="registerAR" style="text-align: right;">
+         </mat-form-field>
+      </div>
+
+    <div class="row1">
+      <mat-form-field appearance="outline">
+          <mat-label>English</mat-label>
+            <input matInput placeholder="My Account" formControlName="myaccountEN">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+          <mat-label>Arabic</mat-label>
+            <input matInput placeholder="My Account" formControlName="myaccountAR" style="text-align: right;">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+        <mat-label>English</mat-label>
+          <input matInput placeholder="Cart" formControlName="cartEN">
+     </mat-form-field>
+     <mat-form-field appearance="outline">
+        <mat-label>Arabic</mat-label>
+          <input matInput placeholder="Cart" formControlName="cartAR" style="text-align: right;">
+     </mat-form-field>
+    </div>
+
+    <div class="row1">
+      <mat-form-field appearance="outline">
+          <mat-label>English</mat-label>
+            <input matInput placeholder="Wish List" formControlName="wishlistEN">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+          <mat-label>Arabic</mat-label>
+            <input matInput placeholder="Wish List" formControlName="wishlistAR" style="text-align: right;">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+        <mat-label>English</mat-label>
+          <input matInput placeholder="Feedback" formControlName="feedbackEN">
+     </mat-form-field>
+     <mat-form-field appearance="outline">
+        <mat-label>Arabic</mat-label>
+          <input matInput placeholder="Feedback" formControlName="feedbackAR" style="text-align: right;">
+     </mat-form-field>
+    </div> 
+    
+    <div class="row1">
+      <mat-form-field appearance="outline">
+          <mat-label>English</mat-label>
+            <input matInput placeholder="Search" formControlName="searchEN">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+          <mat-label>Arabic</mat-label>
+            <input matInput placeholder="Search" formControlName="searchAR" style="text-align: right;">
+    </mat-form-field>
+    </div>
+        <button mat-raised-button class="mat-elevation-z6 w-50 mt-3" style="background-color: #8a1538; color: white;" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
