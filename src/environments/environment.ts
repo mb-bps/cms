@@ -1,7 +1,7 @@
 export const environment = {
-    apiUrl:'http://localhost:8080/api/auth/',
-    apiwebUrl: 'http://localhost:8080/api',
-    sliderimageUrl: 'http://localhost:8080/sliderImages/',
-    homeimageUrl: 'http://localhost:8080/homeImages/',
-    prodImages: 'http://localhost:8080/prodImages/'
+    apiUrl:'moc-bp-dev-cqg2fha9bmd8gaf3.westeurope-01.azurewebsites.net/api/auth/',
+     apiwebUrl: 'moc-bp-dev-cqg2fha9bmd8gaf3.westeurope-01.azurewebsites.net/api',
+     sliderimageUrl: 'moc-bp-dev-cqg2fha9bmd8gaf3.westeurope-01.azurewebsites.net/sliderImages/',
+     homeimageUrl: 'moc-bp-dev-cqg2fha9bmd8gaf3.westeurope-01.azurewebsites.net/homeImages/',
+     prodImages: 'moc-bp-dev-cqg2fha9bmd8gaf3.westeurope-01.azurewebsites.net/prodImages/'
 };
