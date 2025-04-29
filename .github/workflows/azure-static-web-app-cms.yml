@@ -1,47 +1,56 @@
-name: Azure Static Web Apps CI/CD
-
+name: Build & Deploy CMS
 on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
-
 jobs:
-  build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+  build_and_deploy_cms:
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: true
-          lfs: false
-      - name: Build And Deploy
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
+          fetch-depth: 0
+      - name: Clean up legacy SWA files
+        run: |
+          rm -f .github/workflows/azure-static-web-app-cms.yml
+          rm -f staticwebapp.config.json
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APP_API_TOKEN_CMS }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-          action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "dist/qds" # Built app content directory - optional
-          ###### End of Repository/Build Configurations ######
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APP_API_TOKEN_CMS }}
-          action: "close"
+          node-version: '18.x'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+      - name: Build CMS (production)
+        run: npx ng build --configuration production
+      - name: Install SWA CLI
+        run: npm install -g @azure/static-web-apps-cli
+      - name: Verify build output and deploy CMS
+        env:
+          AZURE_STATIC_WEB_APP_API_TOKEN_CMS: ${{ secrets.AZURE_STATIC_WEB_APP_API_TOKEN_CMS }}
+        run: |
+          ls -la dist/
+          ls -la dist/qds/ || echo "dist/qds directory not found!"
           
+          if [ -f "dist/qds/index.html" ]; then
+            swa deploy dist/qds \
+              --app-name STAPP-BooksPrinting-STG-02 \
+              --env production \
+              --deployment-token $AZURE_STATIC_WEB_APP_API_TOKEN_CMS \
+              --verbose
+          else
+            find dist -name "index.html" -type f
+            FOUND_INDEX=$(find dist -name "index.html" -type f | head -1)
+            if [ ! -z "$FOUND_INDEX" ]; then
+              DEPLOY_DIR=$(dirname "$FOUND_INDEX")
+              echo "Deploying from directory: $DEPLOY_DIR"
+              swa deploy "$DEPLOY_DIR" \
+                --app-name STAPP-BooksPrinting-STG-02 \
+                --env production \
+                --deployment-token $AZURE_STATIC_WEB_APP_API_TOKEN_CMS \
+                --verbose
+            else
+              echo "Could not find index.html in any subdirectory. Deployment failed."
+              exit 1
+            fi
+          fi
